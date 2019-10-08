@@ -20,13 +20,15 @@ public class DynamicActivity extends AppCompatActivity {
 
     public void handlerClickLoadRedFragment(View view) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.btn_load_red_fragment2,new RedFragment());
+        fragmentTransaction.replace(R.id.btn_load_red_fragment2,new RedFragment(),"RED_FRAGMENT");
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
     public void handlerClickLoadBlueFragment(View view) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.btn_load_blue_fragment,new BlueFragment());
+        fragmentTransaction.replace(R.id.btn_load_blue_fragment,new BlueFragment(),"BLUE_FRAGMENT");
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 }
